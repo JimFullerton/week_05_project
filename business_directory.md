@@ -2,9 +2,13 @@
 
 # Banff & Macduff Business Directory
 
-Banff & Macduff is trying to raise the profile of the local area.
+The Banff & Macduff Heritage Trail is an initiative by Aberdeenshire council aimed at raising the profile of the local area and fostering community.
+The project comprises three principal parts: installation of a set of interpretation panels, a mobile app-based walking tour, and a dynamic community website.
+The website will contain, among other things; practical information, historical features, heritage stories, and a "what's on" section, which will include a "shop local" feature.
 
-They are looking for a searchable list of local businesses to be displayed on their website.
+For the "shop local" feature, the client is looking for a searchable display-list of digital business cards from local businesses to be made available.
+
+A CSV file of seed data has been provided.
 
 #### MVP:
 
@@ -14,5 +18,6 @@ They are looking for a searchable list of local businesses to be displayed on th
 #### Possible Extensions:
 
 * A separate admin page displays the businesses
+* New businesses can be added on the admin page
 * Businesses on the admin page can be edited
 * Businesses on the admin page can be deleted
