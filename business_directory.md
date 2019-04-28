@@ -2,7 +2,7 @@
 
 # Banff & Macduff Business Directory
 
-The Banff & Macduff Heritage Trail is an initiative by Aberdeenshire council aimed at raising the profile of the local area and fostering community.
+The Banff & Macduff Heritage Trail is an initiative by Aberdeenshire Council aimed at raising the profile of the local area and fostering community.
 The project comprises three principal parts: installation of a set of interpretation panels, a mobile app-based walking tour, and a dynamic community website.
 The website will contain, among other things; practical information, historical features, heritage stories, and a "what's on" section, which will include a "shop local" feature.
 
@@ -15,9 +15,13 @@ A CSV file of seed data has been provided.
 * A list of all the businesses can be displayed
 * Businesses displayed can be filtered by type
 
-#### Possible Extensions:
+#### Basic Extensions:
 
 * A separate admin page displays the businesses
 * New businesses can be added on the admin page
 * Businesses on the admin page can be edited
 * Businesses on the admin page can be deleted
+
+#### Advanced Extension:
+
+* Businesses can also be searched alphabetically by name
