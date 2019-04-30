@@ -1,17 +1,13 @@
-// const CharacterView = require('./views/character_view.js');
-// const Characters = require('./models/characters.js');
-// const CharacterFormView = require('./views/character_form_view.js');
+const BusinessView = require('./views/business_view.js');
+const Businesses = require('./models/businesses.js');
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Content loaded.');
-  // const characterContainer = document.querySelector('#character-container');
-  // const characterView = new CharacterView(characterContainer);
-  // characterView.bindEvents();
-  //
-  // const formElement = document.querySelector("#character-form");
-  // const characterFormView = new CharacterFormView(formElement);
-  // characterFormView.bindEvents();
-  //
-  // const characters = new Characters();
-  // characters.getData();
+  
+  const businessContainer = document.querySelector('#business-container');
+  const businessView = new BusinessView(businessContainer);
+  businessView.bindEvents();
+
+  const businesses = new Businesses();
+  businesses.getData();
 });
