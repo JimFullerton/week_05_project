@@ -1,6 +1,6 @@
 const PubSub = require('../helpers/pub_sub.js');
 
-class CategoryView{
+class AdminCategoryView{
 
   constructor (container) {
     this.container = container;
@@ -47,4 +47,4 @@ class CategoryView{
 
 }
 
-module.exports = CategoryView;
+module.exports = AdminCategoryView;

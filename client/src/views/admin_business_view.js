@@ -1,6 +1,6 @@
 const PubSub = require('../helpers/pub_sub.js');
 
-class BusinessView{
+class AdminBusinessView{
 
   constructor (container) {
     this.container = container;
@@ -61,4 +61,4 @@ class BusinessView{
 
 }
 
-module.exports = BusinessView;
+module.exports = AdminBusinessView;
