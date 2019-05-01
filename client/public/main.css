@@ -1,10 +1,15 @@
+#big-head {
+  font-size: 500%;
+  color: MidnightBlue;
+}
+
 #page-id {
   display: none;
 }
 
-#page-container {
-  width: 95%;
-}
+/* #page-container {
+  width: 85%;
+} */
 
 #public-body {
   background-image:url('../images/harbour.jpeg');
