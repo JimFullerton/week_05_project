@@ -8,8 +8,8 @@ class BusinessView{
 
   bindEvents() {
     PubSub.subscribe('Businesses:business-data-loaded', (evt) => {
-      console.log(evt.detail);
       const businesses = evt.detail;
+      console.log('In bus view, data retrieved: ', businesses);
       this.render(businesses);
     });
   }

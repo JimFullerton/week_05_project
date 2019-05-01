@@ -6,12 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="js/bundle.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="./main.css">
     <title>Banff & Macduff Business Directory</title>
   </head>
-  <body>
+  <body id="public-body">
     <div class="ui container">
       <h1>Banff & Macduff Business Directory</h1>
+      <a id="admin-link" href="/admin.html">Go to the Admin page</a>
 
+  <!-- This section builds the search area for filtering businesses -->
+        <div class="add-form">
+          <form class="ui form" id="add-form">
+            <div class="field">
+              <label>Search by Type of Business:</label>
+              <select id="category">
+                <option value="0"></option>
+              </select>
+            </div>
+            <input type="submit" class="ui button" id="add" value="Search Now" />
+          </form>
+        </div>
+  <!-- end of search area -->
 
       <h4 class="ui horizontal divider header">
         <i class="clipboard list icon"></i>
@@ -20,6 +35,5 @@
 
       <div id="business-container" class="ui cards"></div>
     </div>
-    <a href="admin.html">Go to the Admin page</a>
   </body>
 </html>

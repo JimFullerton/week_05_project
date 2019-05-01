@@ -1,0 +1,28 @@
+#public-body {
+  background-image:url('../images/harbour.jpeg');
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+  position: relative;
+}
+
+/* #admin-link { */
+#admin-link:link, #admin-link:visited {
+  /* float:right; */
+  background-color: DodgerBlue;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  display: inline-block;
+  z-index:999;
+}
+
+/* #admin-link:hover, #admin-link:active {
+  background-color: red;
+} */
+
+#business-container {
+  opacity: 0.8;
+}

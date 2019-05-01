@@ -1,35 +1,35 @@
 const RequestHelper = require('../helpers/request_helper.js');
 const PubSub = require('../helpers/pub_sub.js');
 
-class Businesses{
+class Categories{
 
   constructor () {
     this.data = null;
   }
 
   getData() {
-    const url = `http://localhost:3000/businesses`;
+    const url = `http://localhost:3000/businesses/categories`;
     const request = new RequestHelper(url);
     request.get()
       .then((data) => {
         this.data = data;
-        PubSub.publish('Businesses:business-data-loaded', this.data);
+        PubSub.publish('Categories:category-data-loaded', this.data);
       })
       .catch((message) => {
         console.error(message);
       });
   }
 
-  // postBusiness(business) {
-  //   const url = `http://localhost:3000/businesses`;
+  // postCategory(category) {
+  //   const url = `http://localhost:3000/businesses/categories`;
   //   const request = new RequestHelper(url);
-  //   request.post(business)
-  //     .then((business) => {
-  //       PubSub.publish('Businesses:business-data-loaded', businesses);
+  //   request.post(category)
+  //     .then((category) => {
+  //       PubSub.publish('Categories:category-data-loaded', categories);
   //     })
   //     .catch(console.error);
   // }
 
 }
 
-module.exports = Businesses;
+module.exports = Categories;

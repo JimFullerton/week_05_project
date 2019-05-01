@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="js/bundle.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="./main.css">
     <title>B & M Business Directory Admin</title>
   </head>
   <body>
     <div class="ui container">
       <h1>Banff & Macduff Business Directory Administration</h1>
+      <a id="admin-link" href="/index.html">Go back to the Public page</a>
 
 <!-- This section builds the input form for new businesses -->
       <div class="add-form">
@@ -37,9 +39,12 @@
           <div class="field">
             <label>Type of Business</label>
               <select id="category">
-                <option value="Butcher">Butcher</option>
-                <option value="Baker">Baker</option>
-                <option value="Candlestick Maker">Candlestick Maker</option>
+                <option value="baker">Baker</option>
+                <option value="butcher">Butcher</option>
+                <option value="candlestick Maker">Candlestick Maker</option>
+                <option value="confectioner">Confectioner</option>
+                <option value="fishmonger">Fishmonger</option>
+                <option value="greengrocer">Greengrocer</option>
               </select>
           </div>
           <div class="field">
@@ -62,6 +67,5 @@
 
       <div id="business-container" class="ui cards"></div>
     </div>
-    <a href="index.html">Go back to the Public page</a>
   </body>
 </html>
