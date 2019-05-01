@@ -11,7 +11,7 @@ class AdminCategoryView{
       const categories = evt.detail;
       console.log('In cat view, cats retrieved: ', categories);
       this.render(categories);
-      this.catSelection();
+      // this.catSelection();
     });
   }
 
@@ -35,15 +35,15 @@ class AdminCategoryView{
     this.container.innerHTML = '';
   }
 
-  catSelection() {
-    console.log("in cat select");
-    const catFilter = document.querySelector('select#category');
-    catFilter.addEventListener('change', (evt) => {
-      evt.preventDefault();
-      console.log("in filter evt", evt.target.value);
-      PubSub.publish('CatView:category-filtered', evt.target.value);
-    });
-  }
+  // catSelection() {
+  //   console.log("in cat select");
+  //   const catFilter = document.querySelector('select#category');
+  //   catFilter.addEventListener('change', (evt) => {
+  //     evt.preventDefault();
+  //     console.log("in filter evt", evt.target.value);
+  //     PubSub.publish('CatView:category-filtered', evt.target.value);
+  //   });
+  // }
 
 }
 

@@ -28,6 +28,7 @@ class AdminBusinessView{
   }
 
   createCard(business) {
+    // prep business details:
     const categoryInfo = document.createElement('div');
     categoryInfo.classList.add('meta');
     categoryInfo.innerHTML = `<span>${business.category}</span>`;
@@ -44,16 +45,40 @@ class AdminBusinessView{
     header.classList.add("header");
     header.innerHTML = `${business.organization}`;
 
+    // prep edit/delete buttons:
+    const editButton = document.createElement('button');
+    editButton.classList.add('ui', 'blue', 'button');
+    editButton.textContent = `edit`;
+    editButton.id = business.id
+    editButton.addEventListener('click', (event) => {
+      // PubSub.
+      console.log(`edit button clicked id: ${editButton.id}`);
+    });
+
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('ui', 'red', 'button');
+    deleteButton.textContent = `delete`;
+    deleteButton.addEventListener('click', (event) => {
+      console.log(`del button clicked`);
+    });
+
+    const buttons = document.createElement('div');
+    buttons.classList.add('ui', 'buttons');
+    buttons.appendChild(editButton);
+    buttons.appendChild(deleteButton);
+
+    // create a holder and fill it with content & buttons:
     const content = document.createElement('div');
     content.classList.add("content");
-
-    const card = document.createElement('div');
-    card.classList.add("card");
-
     content.appendChild(header);
     content.appendChild(categoryInfo);
     content.appendChild(addressInfo);
     content.appendChild(contactInfo);
+    content.appendChild(buttons);
+
+    // create blank card and append the built content:
+    const card = document.createElement('div');
+    card.classList.add("card");
     card.appendChild(content);
 
     return card;
@@ -62,3 +87,31 @@ class AdminBusinessView{
 }
 
 module.exports = AdminBusinessView;
+
+// james code 1
+// const editButton = document.createElement('button');
+//     editButton.classList.add('ui', 'purple','button');
+//     editButton.textContent = `edit`;
+//     editButton.addEventListener('click', (event) => {
+//       console.log(`edit ${movie.title}`);
+//       console.log(movie);
+//       PubSub.publish('Chosen-Movie-Edit', movie);
+//     });
+
+// const orButton = document.createElement('div');
+// orButton.classList.add('or');
+
+// const deleteButton = document.createElement('button');
+// deleteButton.classList.add('ui','button');
+// deleteButton.textContent = `delete`;
+// deleteButton.addEventListener('click', (event) => {
+//   PubSub.publish('Chosen-Movie-Delete', movie);
+// });
+// james code 2
+// const buttons = document.createElement('div');
+//     buttons.classList.add('ui', 'buttons');
+//     buttons.appendChild(editButton);
+//     buttons.appendChild(orButton);
+//     buttons.appendChild(deleteButton);
+// james code 3
+// tile.appendChild(buttons);
