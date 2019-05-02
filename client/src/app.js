@@ -4,6 +4,7 @@ const Businesses = require('./models/businesses.js');
 const CategoryView = require('./views/category_view.js');
 const AdminCategoryView = require('./views/admin_category_view.js');
 const Categories = require('./models/categories.js');
+const AddFormView = require('./views/admin_add_form_view.js');
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -28,6 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryContainer = document.querySelector('select#category-list');
     const adminCategoryView = new AdminCategoryView(categoryContainer);
     adminCategoryView.bindEvents();
+
+    const addFormContainer = document.querySelector('#add-bus-form');
+    const addFormView = new AddFormView(addFormContainer);
+    addFormView.bindEvents();
 
     const filterContainer = document.querySelector('select#category');
     const filterView = new CategoryView(filterContainer);

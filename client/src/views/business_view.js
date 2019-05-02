@@ -30,19 +30,19 @@ class BusinessView{
   createCard(business) {
     const categoryInfo = document.createElement('div');
     categoryInfo.classList.add('meta');
-    categoryInfo.innerHTML = `<span>${business.category}</span>`;
+    categoryInfo.innerHTML = `<span id="card-text">${business.category}</span>`;
 
     const addressInfo = document.createElement('div');
     addressInfo.classList.add('meta');
-    addressInfo.innerHTML = `<span>Address: ${business.addressline1} | ${business.addressline2} | ${business.addressline3}</span>`;
+    addressInfo.innerHTML = `<span id="card-text">Address: ${business.addressline1} | ${business.addressline2} | ${business.addressline3}</span>`;
 
     const contactInfo = document.createElement('div');
     contactInfo.classList.add('meta');
-    contactInfo.innerHTML = `<span>Tel: ${business.phonenumber} | Web: ${business.url}</span>`;
+    contactInfo.innerHTML = `<span id="card-text">Tel: ${business.phonenumber} | Web: <a href="${business.url}">${business.url}</a></span>`;
 
     const header = document.createElement('div');
     header.classList.add("header");
-    header.innerHTML = `${business.organization}`;
+    header.innerHTML = `<span id="card-text">${business.organization}</span>`;
 
     const content = document.createElement('div');
     content.classList.add("content");

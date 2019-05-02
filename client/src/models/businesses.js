@@ -16,6 +16,10 @@ class Businesses{
       const busID = evt.detail;
       this.deleteBusiness(busID);
     });
+    PubSub.subscribe('AddForm:add-business', (evt) => {
+      const busInfo = evt.detail;
+      this.postBusiness(busInfo);
+    });
   }
 
   getData() {

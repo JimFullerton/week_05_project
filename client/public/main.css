@@ -7,7 +7,7 @@
   display: none;
 }
 
-/* reinstate this to expand the number of cards across the page: 
+/* reinstate this to expand the number of cards across the page:
 #page-container {
   width: 85%;
 }
@@ -24,13 +24,24 @@
 }
 
 #admin-link:link, #admin-link:visited {
+  /* float: right; */
   background-color: DodgerBlue;
   color: white;
   padding: 15px 25px;
+  margin-bottom: 15px;
   text-align: center;
   display: inline-block;
 }
 
+#list-divider {
+  color: white;
+  font-size: 150%;
+}
+
 #business-container {
-  opacity: 0.8;
+  opacity: 0.83;
+}
+
+#card-text {
+  color: MidnightBlue;
 }
