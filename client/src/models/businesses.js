@@ -61,15 +61,20 @@ class Businesses{
       });
   }
 
-  // postBusiness(business) {
-  //   const url = `http://localhost:3000/businesses`;
-  //   const request = new RequestHelper(url);
-  //   request.post(business)
-  //     .then((business) => {
-  //       PubSub.publish('Businesses:business-data-loaded', businesses);
-  //     })
-  //     .catch(console.error);
-  // }
+  postBusiness(busInfo) {
+    console.log(`ready to post: ${busInfo}`);
+    console.dir(busInfo);
+    const url = `http://localhost:3000/businesses`;
+    const request = new RequestHelper(url);
+    request.post(busInfo)
+      .then((data) => {
+        this.data = data;
+        // PubSub.publish('Businesses:business-data-loaded', businesses);
+      })
+      .catch((message) => {
+        console.error(message);
+      });
+  }
 
 }
 
