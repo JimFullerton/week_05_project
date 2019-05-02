@@ -9,55 +9,60 @@
     <link rel="stylesheet" href="./main.css">
     <title>B & M: Shop Local Admin</title>
   </head>
+
   <body>
     <div class="ui container">
       <p id="page-id">admin</p>
       <h1>Banff & Macduff Business Directory Administration</h1>
       <a id="admin-link" href="/index.html">Go back to the Public page</a>
-      <h4 class="ui horizontal divider header">
-        <!-- <i class="clipboard list icon"></i> -->
-        Add a New Business
-      </h4>
+
+<!-- This section builds the input form for new categories -->
+      <h4 class="ui horizontal divider header">Add a New Category</h4>
+      <div class="add-form">
+        <form class="ui form" id="add-cat-form">
+          <div class="field">
+            <label>Description of New Business Category:</label>
+            <input type="text" id="new-cat" />
+          </div>
+          <input type="submit" class="ui button" id="add-cat" value="Add Category" />
+        </form>
+      </div>
+<!-- end of new category input form -->
 
 <!-- This section builds the input form for new businesses -->
+      <h4 class="ui horizontal divider header">Add a New Business</h4>
       <div class="add-form">
         <form class="ui form" id="add-form">
           <div class="field">
-            <label>Business Name</label>
+            <label>Business Name:</label>
             <input type="text" id="organization" />
           </div>
           <div class="field">
-            <label>Address</label>
+            <label>First Line of Business Address:</label>
             <input type="text" id="addressline1" />
           </div>
           <div class="field">
-            <label>Choose Town (Banff or Macduff)</label>
+            <label>Choose Town (Banff or Macduff):</label>
               <select id="addressline2">
-                <option value="Banff">Banff</option>
-                <option value="Macduff">Macduff</option>
+                <option value="0"></option>
+                <option value="1">Banff</option>
+                <option value="2">Macduff</option>
               </select>
           </div>
           <div class="field">
-            <label>Post Code</label>
+            <label>Post Code:</label>
             <input type="text" id="addressline3" />
           </div>
           <div class="field">
-            <label>Type of Business</label>
-              <select id="category">
-                <option value="baker">Baker</option>
-                <option value="butcher">Butcher</option>
-                <option value="candlestick Maker">Candlestick Maker</option>
-                <option value="confectioner">Confectioner</option>
-                <option value="fishmonger">Fishmonger</option>
-                <option value="greengrocer">Greengrocer</option>
-              </select>
+            <label>Type of Business:</label>
+              <select id="category-list"></select>
           </div>
           <div class="field">
-            <label>Phone Number</label>
+            <label>Phone Number:</label>
             <input type="text" id="phonenumber" />
           </div>
           <div class="field">
-            <label>Web Site Address</label>
+            <label>Web Site Address:</label>
             <input type="text" id="url" />
           </div>
           <input type="submit" class="ui button" id="add" value="Add Business" />
@@ -65,12 +70,22 @@
       </div>
 <!-- end of new business input form -->
 
-      <h4 class="ui horizontal divider header">
-        <!-- <i class="clipboard list icon"></i> -->
-        Business Listing
-      </h4>
-
+<!-- This section holds the display of businesses for edit/delete -->
+      <h4 class="ui horizontal divider header">Choose an Existing Business to Update or Delete</h4>
+<!-- This section builds the search area for filtering businesses -->
+      <div class="add-form">
+        <form class="ui form" id="add-form">
+          <div class="field">
+            <label>Search by Type of Business:</label>
+            <select id="category"></select>
+          </div>
+        </form>
+      </div>
+<!-- end of filter -->
+      <br />
       <div id="business-container" class="ui cards"></div>
+<!-- end of edit/delete display -->
+
     </div>
   </body>
 </html>

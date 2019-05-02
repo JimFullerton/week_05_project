@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./main.css">
     <title>Banff & Macduff: Shop Local</title>
   </head>
+  
   <body id="public-body">
     <div id="page-container" class="ui container">
       <p id="page-id">index</p>
@@ -20,21 +21,16 @@
           <form class="ui form" id="add-form">
             <div class="field">
               <label>Search by Type of Business:</label>
-              <select id="category">
-                <option value="0"></option>
-              </select>
+              <select id="category"></select>
             </div>
-            <!-- <input type="submit" class="ui button" id="filter" value="Search Now" /> -->
           </form>
         </div>
   <!-- end of search area -->
 
-      <h4 class="ui horizontal divider header">
-        <!-- <i class="clipboard list icon"></i> -->
-        Business Listings
-      </h4>
-
+  <!-- This section holds the main display of businesses -->
+      <h4 class="ui horizontal divider header">Business Listings</h4>
       <div id="business-container" class="ui cards"></div>
+  <!-- end of main display -->
     </div>
   </body>
 </html>

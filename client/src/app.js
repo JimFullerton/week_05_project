@@ -6,10 +6,8 @@ const AdminCategoryView = require('./views/admin_category_view.js');
 const Categories = require('./models/categories.js');
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Content loaded.'); // ***** log to be removed when no longer required *****
 
   const pageID = document.querySelector('p#page-id');
-  console.log("Page ID: ", pageID.textContent); // ***** log to be removed when no longer required *****
 
   if (pageID.textContent == 'index') {
 
@@ -27,9 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const adminBusinessView = new AdminBusinessView(businessContainer);
     adminBusinessView.bindEvents();
 
-    const categoryContainer = document.querySelector('select#category');
+    const categoryContainer = document.querySelector('select#category-list');
     const adminCategoryView = new AdminCategoryView(categoryContainer);
     adminCategoryView.bindEvents();
+
+    const filterContainer = document.querySelector('select#category');
+    const filterView = new CategoryView(filterContainer);
+    filterView.bindEvents();
 
   };
 
