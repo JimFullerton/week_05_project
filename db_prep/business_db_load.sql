@@ -1,6 +1,6 @@
 -- DROP TABLE subCategories;
-DROP TABLE business_categories;
 DROP TABLE businesses;
+DROP TABLE business_categories;
 
 -- CREATE TABLE subCategories(
 --    id           SERIAL8 PRIMARY KEY
@@ -32,11 +32,17 @@ INSERT INTO business_categories(category) VALUES ('Hair and Beauty');
 INSERT INTO business_categories(category) VALUES ('Food and Drink');
 INSERT INTO business_categories(category) VALUES ('Pet Services');
 INSERT INTO business_categories(category) VALUES ('Accommodation and Tourism');
+INSERT INTO business_categories(category) VALUES ('Toy Shops');
+INSERT INTO business_categories(category) VALUES ('Record Shops');
+INSERT INTO business_categories(category) VALUES ('Software Purveyors');
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (1,'Chalmers Hospital','Clunie Street','Banff','AB45 1JA','01261 812 567','http://www.nhsgrampian.org');
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (1,'Doctor Robert','Electric Avenue','Banff','AB99 1AA','01261 999 999','http://www.nhsgrampian.org');
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (2,'Scotmid','4 Lusylaw Road','Banff','AB45 1EW','01261 818 264','http://www.scotmid.co.uk');
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (3,'Elegant','41 High Street','Banff','AB45 1AN','01261 815 494',NULL);
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (3,'Salon 45','45 High Street','Banff','AB45 1AN','01261 812 021',NULL);
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (4,'Railway Inn','96 North Castle Street','Banff','AB45 1JJ','01261 812 251',NULL);
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (4,'Paddy McGinty','99 Shamrock Street','Banff','AB99 1JJ','01261 333 333','http://irishpub.com');
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (4,'Sausages','100 Butcher Street','Banff','AB99 1BB','01261 111 333','http://sausages.com');
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (5,'The Banff Pet Shop','7 Low Street','Banff','AB45 1AU','01261 815 420',NULL);
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (5,'Happy Hounds','3 Low Street','Banff','AB45 1AU','07854 716 166',NULL);
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (4,'The Old Moray','29 Shore Street','Macduff','AB44 1TS','01261 832 279',NULL);
@@ -45,13 +51,27 @@ INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addres
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (6,'Carmelite House Hotel','30 Low Street','Banff','AB45 1AY','01261 812 152','http://www.carmelitehousehotel.co.uk/');
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (1,'Macduff Medical Practice','100 Duff Street','Macduff','AB44 1PR','01261 833 777','http://www.nhsgrampian.co.uk');
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (2,'Scotmid','153 Duff Street','Macduff','AB44 1PS','01261 832 533','http://www.scotmid.co.uk');
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (2,'The Public Convenience','200 Duff Street','Macduff','AB44 1AA','01261 888 333','http://www.pubcon.co.uk');
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (2,'Dafties','1 Silly Street','Macduff','AB44 1PP','01261 876 543','http://www.daft.co.uk');
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (3,'Tusk','75 Duff Street','Macduff','AB44 1PR',NULL,NULL);
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (6,'The Knowes Hotel','78 Market Street','Macduff','AB44 1LL','01261 606 101','https://knoweshotelandrestaurant.co.uk/');
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (6,'The Sheraton Hotel','1 Sheraton Street','Macduff','AB44 1LL','01261 606 101','https://sheraton.co.uk/');
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (6,'The Hilton Hotel','100 Hilton Street','Macduff','AB44 1LL','01261 606 101','https://hilton.co.uk/');
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (1,'Lloydspharmacy','157 Duff Street','Macduff','AB44 1PS','01261 832 219','http://www.lloydspharmacy.com');
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (2,'Costcutter','20 Duff Street','Macduff','AB44 1TL','01261 833 364','http://www.costcutter.com');
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (3,'Efes Turkish Barbers','17 Strait Path','Banff','AB45 1AD','01261 498 597',NULL);
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (3,'Tattooed Monkey','43 Duff Street','Macduff','AB44 1QJ','01261 833 055',NULL);
 INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (4,'Duff House Tea Room','Duff House','Banff','AB45 3BX',NULL,NULL);
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (7,'Bored Games','Mayfair','Banff','AB99 3CC','07771 123 123','http://www.boredgames.co.uk');
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (7,'Card Games','Old Kent Road','Macduff','AB99 1AA','07779 123 123','http://www.cardgames.co.uk');
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (7,'More Games','Pall Mall','Banff','AB99 2BB','07778 123 123','http://www.moregames.co.uk');
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (8,'The Vinyl Countdown','Tobacco Road','Banff','AB99 3CC','07777 123 123','http://www.recordshop.co.uk');
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (9,'MACRO-soft','Gates Street','Banff','AB99 38CC','07776 123 456','http://www.software.co.uk');
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (9,'WidgetWare','Turing Street','Banff','AB99 33DD','07775 123 321','http://www.widgetware.co.uk');
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (9,'RandomWare','Englebart Street','Banff','AB99 37EE','07774 123 789','http://www.randomware.co.uk');
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (9,'Nocturnal Aviation','Wozniak Street','Banff','AB99 32CC','07773 789 789','http://www.nocturnalaviation.co.uk');
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (9,'Traditional Algorithms','Von Neumann Street','Banff','AB99 31FF','07772 444 789','http://www.tradal.co.uk');
+INSERT INTO businesses(category_id,organization,addressLine1,addressLine2,addressLine3,phoneNumber,url) VALUES (9,'Boole & Babbage','Lovelace Street','Banff','AB99 31FF','07771 555 789','http://www.bandb.co.uk');
 
 
 -- Full set of seed data follows (including cat & subCat as strings):

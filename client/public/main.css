@@ -7,9 +7,11 @@
   display: none;
 }
 
-/* #page-container {
+/* reinstate this to expand the number of cards across the page: 
+#page-container {
   width: 85%;
-} */
+}
+*/
 
 #public-body {
   background-image:url('../images/harbour.jpeg');
@@ -21,21 +23,13 @@
   position: relative;
 }
 
-/* #admin-link { */
 #admin-link:link, #admin-link:visited {
-  /* float:right; */
   background-color: DodgerBlue;
-  /* border: 2px; */
   color: white;
   padding: 15px 25px;
   text-align: center;
   display: inline-block;
-  z-index:999;
 }
-
-/* #admin-link:hover, #admin-link:active {
-  background-color: red;
-} */
 
 #business-container {
   opacity: 0.8;

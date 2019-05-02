@@ -4,9 +4,8 @@ const SqlRunner = require("../db/sql_runner");
 
 /* GET - read all data (including category name) for all businesses. */
 router.get('/', function(req, res) {
-  SqlRunner.run(
-    "SELECT * FROM businesses INNER JOIN business_categories ON businesses.category_id = business_categories.id").then
-      (result => {
+  SqlRunner.run("SELECT businesses.id,category_id,organization,addressline1,addressline2,addressline3,phonenumber,url,category FROM businesses INNER JOIN business_categories ON businesses.category_id = business_categories.id")
+    .then(result => {
         res.status(200).json(result.rows);
   });
 });
@@ -21,7 +20,7 @@ router.get('/categories', function(req, res) {
 
 /* GET - return all data for businesses in a given category. */
 router.get('/:id', function(req, res) {
-  SqlRunner.run("SELECT * FROM businesses INNER JOIN business_categories ON businesses.category_id = business_categories.id WHERE businesses.category_id = $1", [req.params.id]).then(
+  SqlRunner.run("SELECT businesses.id,category_id,organization,addressline1,addressline2,addressline3,phonenumber,url,category FROM businesses INNER JOIN business_categories ON businesses.category_id = business_categories.id WHERE businesses.category_id = $1", [req.params.id]).then(
     result => {
       res.status(200).json(result.rows);
   });

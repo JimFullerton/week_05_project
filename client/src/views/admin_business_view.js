@@ -52,14 +52,14 @@ class AdminBusinessView{
     editButton.id = business.id
     editButton.addEventListener('click', (event) => {
       // PubSub.
-      console.log(`edit button clicked id: ${editButton.id}`);
+      console.log(`edit button clicked: ${business.id}`);
     });
 
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('ui', 'red', 'button');
     deleteButton.textContent = `delete`;
     deleteButton.addEventListener('click', (event) => {
-      console.log(`del button clicked`);
+      console.log(`del button clicked: ${business.id}`);
     });
 
     const buttons = document.createElement('div');
