@@ -1,4 +1,5 @@
 const PubSub = require('../helpers/pub_sub.js');
+const Businesses = require('../models/businesses.js');
 
 class CategoryView{
 
@@ -19,7 +20,7 @@ class CategoryView{
     this.clearCategories();
 
     const zeroOption = document.createElement('option');
-    zeroOption.textContent = "";
+    zeroOption.textContent = "Show All";
     zeroOption.value = 0;
     this.container.appendChild(zeroOption);
 
@@ -40,8 +41,15 @@ class CategoryView{
     const catFilter = document.querySelector('select#category');
     catFilter.addEventListener('change', (evt) => {
       evt.preventDefault();
-      console.log("in filter evt", evt.target.value);
-      PubSub.publish('CatView:category-filtered', evt.target.value);
+      if (evt.target.value == 0) {
+        console.log("in cat filter evt - all:", evt.target.value);
+        const businesses = new Businesses();
+        businesses.bindEvents();
+        businesses.getData();
+      } else {
+        console.log("in cat filter evt - option:", evt.target.value);
+        PubSub.publish('CatView:category-filtered', evt.target.value);
+      }
     });
   }
 

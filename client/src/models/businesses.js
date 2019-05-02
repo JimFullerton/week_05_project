@@ -12,6 +12,10 @@ class Businesses{
       const catID = evt.detail;
       this.getDataByCategory(catID);
     });
+    PubSub.subscribe('Admin:delete-business', (evt) => {
+      const busID = evt.detail;
+      this.deleteBusiness(busID);
+    });
   }
 
   getData() {
@@ -34,6 +38,19 @@ class Businesses{
       .then((data) => {
         this.data = data;
         PubSub.publish('Businesses:business-data-loaded', this.data);
+      })
+      .catch((message) => {
+        console.error(message);
+      });
+  }
+
+  deleteBusiness(busID) {
+    const url = `http://localhost:3000/businesses/${busID}`;
+    const request = new RequestHelper(url);
+    request.delete()
+      .then((data) => {
+        this.data = data;
+        // PubSub.publish('Businesses:business-data-loaded', this.data);
       })
       .catch((message) => {
         console.error(message);

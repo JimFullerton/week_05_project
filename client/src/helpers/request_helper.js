@@ -9,6 +9,13 @@ class RequestHelper{
       .then((res) => res.json());
   }
 
+  delete() {
+    return fetch(this.url, {
+      method: 'DELETE',
+    })
+    .then((response) => response.json());
+  }
+
   post(payload) {
     return fetch(this.url, {
       method: 'POST',

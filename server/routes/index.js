@@ -51,9 +51,11 @@ router.post('/', function(req, res) {
 
 /* DELETE - delete an existing business. */
 router.delete('/:id', function(req, res) {
-  SqlRunner.run("DELETE FROM businesses WHERE id = $1", [req.params.id]).then(
-    result => {
-      res.status(200).json(result);
+  SqlRunner.run("DELETE FROM businesses WHERE id = $1", [req.params.id])
+  .then(result => {
+    SqlRunner.run("SELECT businesses.id,category_id,organization,addressline1,addressline2,addressline3,phonenumber,url,category FROM businesses INNER JOIN business_categories ON businesses.category_id = business_categories.id").then(result => {
+      res.status(200).json(result.rows);
+    });
   });
 });
 

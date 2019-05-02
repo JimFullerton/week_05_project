@@ -48,10 +48,9 @@ class AdminBusinessView{
     // prep edit/delete buttons:
     const editButton = document.createElement('button');
     editButton.classList.add('ui', 'blue', 'button');
-    editButton.textContent = `edit`;
+    editButton.textContent = `update`;
     editButton.id = business.id
     editButton.addEventListener('click', (event) => {
-      // PubSub.
       console.log(`edit button clicked: ${business.id}`);
     });
 
@@ -60,6 +59,7 @@ class AdminBusinessView{
     deleteButton.textContent = `delete`;
     deleteButton.addEventListener('click', (event) => {
       console.log(`del button clicked: ${business.id}`);
+      PubSub.publish('Admin:delete-business', business.id);
     });
 
     const buttons = document.createElement('div');
@@ -87,31 +87,3 @@ class AdminBusinessView{
 }
 
 module.exports = AdminBusinessView;
-
-// james code 1
-// const editButton = document.createElement('button');
-//     editButton.classList.add('ui', 'purple','button');
-//     editButton.textContent = `edit`;
-//     editButton.addEventListener('click', (event) => {
-//       console.log(`edit ${movie.title}`);
-//       console.log(movie);
-//       PubSub.publish('Chosen-Movie-Edit', movie);
-//     });
-
-// const orButton = document.createElement('div');
-// orButton.classList.add('or');
-
-// const deleteButton = document.createElement('button');
-// deleteButton.classList.add('ui','button');
-// deleteButton.textContent = `delete`;
-// deleteButton.addEventListener('click', (event) => {
-//   PubSub.publish('Chosen-Movie-Delete', movie);
-// });
-// james code 2
-// const buttons = document.createElement('div');
-//     buttons.classList.add('ui', 'buttons');
-//     buttons.appendChild(editButton);
-//     buttons.appendChild(orButton);
-//     buttons.appendChild(deleteButton);
-// james code 3
-// tile.appendChild(buttons);
